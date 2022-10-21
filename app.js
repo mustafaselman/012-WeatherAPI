@@ -8,6 +8,7 @@ function eventListeners(e)
     button.addEventListener("click", () =>
     {
         getCities(citynameinput.value);
+        citynameinput.value = "";
     });
 
     document.addEventListener('keydown', (event) =>
@@ -16,6 +17,7 @@ function eventListeners(e)
         {
             event.preventDefault();
             getCities(event.target.value);
+            citynameinput.value = "";
         }
     });
 }
@@ -90,6 +92,7 @@ function nodeControl(newCard)
             if (newCard.getElementsByTagName("h5")[ 0 ].innerText == innertext)
             {
                 control = false;
+                alert("This city is already in the list of cities");
             }
         }
         if (control)
